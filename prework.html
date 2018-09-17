@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="description" content="Presentation">
+    <meta name="keywords" content="presentation">
+    <meta name="author" content="mat3e">
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+    <meta content="utf-8" http-equiv="encoding">
+
+    <link rel="stylesheet" href="css/reveal.css">
+    <link rel="stylesheet" href="https://unpkg.com/reveal.js/css/theme/white.css">
+    <link rel="stylesheet" href="css/idea.css">
+    <link rel="stylesheet" href="css/fontawesome.css">
+    <style>
+        #header {
+            color: #10a8ae;
+            text-align: left;
+            line-height: .85;
+
+            padding-left: .1em;
+
+            border-left: solid .1em #10a8ae;
+        }
+
+        #header-logo {
+            width: 290px;
+            height: 105px;
+            background: url('img/logo.png') no-repeat;
+
+            top: -4em;
+            right: 0;
+            position: absolute;
+        }
+
+        #about-me,
+        #about-me-end {
+            list-style-type: none;
+            margin-left: 12.5%;
+            float: left;
+        }
+
+        #about-me a,
+        #about-me-end a {
+            color: white;
+        }
+
+        #about-me a:hover,
+        #about-me-end a:hover {
+            color: #dd5566;
+        }
+
+        .slides section img.pure-img {
+            border: none;
+            box-shadow: none;
+        }
+
+        code[contenteditable="true"] {
+            border: 0;
+            outline: 0;
+        }
+
+        .slides section pre {
+            margin-bottom: 0;
+        }
+
+        .slides section pre+button {
+            cursor: pointer;
+
+            font-size: .65em;
+            font-weight: 100;
+            -webkit-font-smoothing: antialiased;
+
+            color: white;
+            background: rgb(175, 30, 35);
+
+            padding: 0 3px;
+            border: transparent;
+            border-radius: 4px;
+        }
+
+        .slides section a .stripped-img {
+            border: none;
+            margin: 0;
+            box-shadow: none;
+            background-color: rgba(255, 255, 255, 0);
+        }
+
+        .slides section a .stripped-img:hover {
+            border: none;
+            margin: 0;
+            box-shadow: none;
+            background-color: rgba(255, 255, 255, 0);
+        }
+
+        .slides section .comment {
+            margin-top: -20px;
+            margin-bottom: 20px;
+            color: gray;
+        }
+
+        .reveal section ul.answering-list {
+            list-style-type: none;
+            margin-left: 0
+        }
+
+        .reveal section ul.answering-list>li:before {
+            content: "⇒ ";
+        }
+    </style>
+    <script>
+        var link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = window.location.search.match(/print-pdf/gi) ? 'css/print/pdf.css' : 'css/print/paper.css';
+        document.getElementsByTagName('head')[0].appendChild(link);
+    </script>
+</head>
+
+<body>
+    <div class="reveal">
+        <div class="slides">
+            <section data-background-image>
+                <section data-background-color="#fff">
+                    <h1 id="header">Warsztat z Javy<br><span style="color: black; font-size: .75em">Budujemy aplikację!</span></h1>
+                    <div id="header-logo"></div>
+                </section>
+                <section data-background-image="img/bg-hd.jpg" data-background-transition="zoom" data-background-size="75%">
+                    <ul id="about-me">
+                        <li>
+                            <a href="https://www.linkedin.com/in/mateusz-chrzonstowski/">
+                                <i class="fab fa-linkedin" style="color: #0077B5; background-color: #FFF; line-height: .75em"></i>
+                                /mateusz-chrzonstowski
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://twitter.com/_mat3e_">
+                                <i class="fab fa-twitter-square" style="background-color: #1DA1F2; color: #FFF; line-height: .75em"></i>
+                                /_mat3e_
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.reddit.com/user/_mat3e_">
+                                <i class="fab fa-reddit-square" style="background-color: #FF4500; color: #FFF; line-height: .75em"></i>
+                                /_mat3e_
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://github.com/mat3e/">
+                                <i class="fab fa-github-square" style="color: #24292E; background-color: #FFF; line-height: .75em"></i>
+                                /mat3e
+                            </a>
+                        </li>
+                    </ul>
+                </section>
+            </section>
+            <section>
+                <h2>
+                    <span>Wprowadzenie</span>
+                </h2>
+                <ul>
+                    <li class="fragment">Kolejny "Hello world" + szkolenie z programowania obiektowego?
+                        <span class="fragment">Ani trochę!</span>
+                    </li>
+                    <li class="fragment">Budowanie na istniejącej aplikacji webowej
+                        <ul>
+                            <li class="fragment">Tak jak każdego dnia, w pracy programisty</li>
+                        </ul>
+                    </li>
+                    <li class="fragment">Na początek, parę rzeczy do pobrania...</li>
+                </ul>
+            </section>
+            <section>
+                <h2>
+                    <span>Niezbędne narzędzia</span>
+                </h2>
+                <ul>
+                    <li class="fragment"><a href="http://www.oracle.com/technetwork/java/javase/downloads/jdk10-downloads-4416644.html">JDK
+                            10
+                        </a> - Java Development Kit - ekosystem potrzebny do programowania w Javie</li>
+                    <li class="fragment"><a href="https://www.jetbrains.com/idea/">IntelliJ IDEA</a> - IDE (Integrated development
+                        environment) - środowisko programistyczne
+                        <ul>
+                            <li class="fragment">Pobrać darmową wersję <i>Community</i></li>
+                        </ul>
+                    </li>
+                    <li class="fragment">No to start!</li>
+                </ul>
+            </section>
+            <section>
+                <h2 style="margin-bottom: 0">
+                    <span>A co "na start"?</span>
+                </h2>
+                <p class="fragment" style="margin-top: 0"><i>A ile potrafisz z programowania?</i>
+                    <ul>
+                        <li class="fragment">Coś tam? Coś tam?
+                            <ul class="answering-list">
+                                <li class="fragment">Może warto przejść dalej</li>
+                            </ul>
+                        </li>
+                        <li class="fragment">Nic a nic?
+                            <ul class="answering-list">
+                                <li class="fragment"> Co najmniej 5 lekcji:
+                                    <ol style="padding-left: 1em">
+                                        <li class="fragment"><a href="http://www.samouczekprogramisty.pl/metody-w-jezyku-java/">Metody
+                                                w języku Java
+                                            </a></li>
+                                        <li class="fragment"><a href="http://www.samouczekprogramisty.pl/obiekty-w-jezyku-java/">Obiekty
+                                                w języku Java
+                                            </a></li>
+                                        <li class="fragment"><a href="http://www.samouczekprogramisty.pl/pierwszy-program-w-java/">Pierwszy
+                                                program w Java</a></li>
+                                        <li class="fragment"><a href="http://www.samouczekprogramisty.pl/petle-i-instrukcje-warunkowe-w-jezyku-java/">Pętle
+                                                i instrukcje warunkowe w języku Java</a></li>
+                                        <li class="fragment"><a href="http://www.samouczekprogramisty.pl/dziedziczenie-w-jezyku-java/">Dziedziczenie
+                                                w języku Java</a></li>
+                                    </ol>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </p>
+            </section>
+            <section>
+                <h2 style="margin-bottom: 0">
+                    <span>Start z aplikacją</span>
+                </h2>
+                <ol>
+                    <li class="fragment">Pobrać kod aplikacji: <a href="https://github.com/mat3e/embedded-tomcat">repozytorium</a>
+                        <ul>
+                            <li class="fragment">Przycisk <i>Clone or download</i> ⇒ <i>Download ZIP</i></li>
+                            <li class="fragment">Wypakować archiwum</li>
+                        </ul>
+                    </li>
+                    <li class="fragment">W IntelliJ otworzyć plik <i>pom.xml</i> z wypakowanego archiwum, wybrać opcję <i>Open
+                            as Project</i>
+                    </li>
+                    <li class="fragment">Zezwolić na <i>Auto-import</i> (powinien wyskoczyć komunikat w prawym, dolnym rogu)
+                        <ul>
+                            <li class="fragment">Można w <i>Preferences</i> - wyszukać "maven import" i zaznaczyć automatyczne importowanie</li>
+                        </ul>
+                    </li>
+                    <li class="fragment">Uruchomić aplikację (klasa <code>TaskList4000</code>)
+                    </li>
+                </ol>
+            </section>
+            <section>
+                <h2>
+                    <span>Testowanie</span>
+                </h2>
+                <ul>
+                    <li class="fragment">W ulubionej przeglądarce wpisać <i>localhost:8080/api/test</i></li>
+                    <li class="fragment">Dopisać <i>?name=Mistrz</i> i ponownie otworzyć stronę</li>
+                    <li class="fragment">Podmienić na <i>localhost:8080/api/test?welcome=2</i></li>
+                    <li class="fragment">Ostateczny test: <i>http://localhost:8080/api/test?welcome=2&name=Mistrz</i></li>
+                    <li class="fragment">Spróbować też z innymi wartościami</li>
+                </ul>
+            </section>
+            <section>
+                <h2 style="margin-bottom: 0">
+                    <span>Jak to tak? - serwer</span>
+                </h2>
+                <ul>
+                    <li class="fragment">W klasie <code>TaskList4000</code> dzieje się trochę magii, ale widać tam słowo
+                        "Tomcat"
+                        <li class="fragment">Tomcat jest serwerem, który umie interpretować kod Javy</li>
+                        <li class="fragment">Magia sprawia, że Tomcat jest częścią budowanej przez nas aplikacji</li>
+                        <li class="fragment">Magia mówi, na jakie klasy i foldery Tomcat powinien patrzeć</li>
+                        <li class="fragment">Tomcat jest odpalony lokalnie, stąd adres "localhost:8080"</li>
+                    </li>
+                </ul>
+            </section>
+            <section>
+                <h2 style="margin-bottom: 0;">
+                    <span>Jak to tak? - <code>api/test</code></span>
+                </h2>
+                <ul style="font-size: .9em">
+                    <li class="fragment">Gdy wpisujemy adres, np. "localhost:8080", przeglądarka dodaje od siebie "http://"</li>
+                    <li class="fragment">W internetach HTTP jest wszechobecne!</li>
+                    <li class="fragment">Najpopularniejszą metodą protokołu HTTP jest GET</li>
+                    <li class="fragment">Przeglądarka wysłała żądanie (request) HTTP GET pod adres, np. <i>localhost:8080/api/test</i></li>
+                    <li class="fragment">Jedną z klas w Tomcat'cie jest <code>WelcomeServlet</code></li>
+                    <li class="fragment">Zobacz, <code>WelcomeServlet</code> rozszerza <span style="color: red; font-weight: bold"><code>Http</code></span><code>Servlet</code>!</li>
+                    <li class="fragment"><code>WelcomeServlet</code> jest powiązany z adresem "/api/test". Widzisz jak i
+                        gdzie?</li>
+                    <li class="fragment"><code>WelcomeServlet</code> ma metodę <code>doGet</code>, obsługującą żądanie HTTP
+                        GET i odpowiedź na to żądanie (response)</li>
+                </ul>
+            </section>
+            <section>
+                <h2 style="margin-bottom: 0">
+                    <span>Jak to tak? - <code>doGet</code> (1/2)</span>
+                </h2>
+                <ul>
+                    <li class="fragment"><code>req.getParameter("name")</code> to instrukcja, pobierająca z żądania parametr
+                        "name"
+                        <ul>
+                            <li class="fragment">W przypadku <i>http://localhost:8080/api/test?name=Mistrz</i> jest to "Mistrz"</li>
+                        </ul>
+                    </li>
+                    <li class="fragment">Gdy nie ma parametru name, jego wartość to <code>null</code></li>
+                    <li class="fragment">Można pisać:
+                        <pre style="margin-top:0"><code class="java" data-trim>
+                            String name = req.getParameter("name");
+                            if(name == null) {
+                                name = "world";
+                            }
+                        </code></pre>
+                    </li>
+                    <li class="fragment">Ale można też:
+                        <pre style="margin-top:0"><code class="java" data-trim>
+                            var name = Optional.ofNullable(req.getParameter("name"))
+                              .orElse("world");
+                        </code></pre>
+                    </li>
+                </ul>
+            </section>
+            <section>
+                <h2 style="margin-bottom: 0">
+                    <span>Jak to tak? - <code>doGet</code> (2/2)</span>
+                </h2>
+                <ul>
+                    <li class="fragment">Parametry są przesyłane jako <code>String</code> (tekst)</li>
+                    <li class="fragment"><code>Integer.valueOf(text)</code> pozwala zamienić <code>text</code> na liczbę
+                        całkowitą
+                    </li>
+                    <li class="fragment">Klasa <code>WelcomeServlet</code> ma prywatne pole typu <code>WelcomeService</code></li>
+                    <li class="fragment"><code>WelcomeService</code> zwraca odpowiedni tekst, dla zadanych <code>name</code>                        oraz
+                        <code>id</code></li>
+                    <li class="fragment">Umieszczenie tekstu w odpowiedzi (jeden ze sposobów):
+                        <pre style="margin-top:0"><code class="java" data-trim>resp.getWriter().write(fullText);</code></pre>
+                    </li>
+                </ul>
+            </section>
+            <section>
+                <h2 style="margin-bottom: 0">
+                    <span style="font-size: .9em">Jak to tak? - <code>WelcomeService</code></span>
+                </h2>
+                <ul style="font-size: .9em">
+                    <li class="fragment">Serwisy to miejsca w kodzie, gdzie trafia logika biznesowa ("mięcho") aplikacji</li>
+                    <li class="fragment"><code>WelcomeService</code> ma metodę, która "wie" jak dla podanej nazwy oraz id
+                        powitania, stworzyć tekst, witający użytkownika z daną nazwą</li>
+                    <li class="fragment">W pierwszym kroku metody następuje pobranie powitania z bazy danych</li>
+                    <li class="fragment">Do komunikacji z bazą, jest użyte narzędzie <i>Hibernate</i></li>
+                    <li class="fragment">Pobrane powitanie jest "sklejane" z resztą wiadomości</li>
+                    <li class="fragment">Gdy obiekt powitania "skleja się" z tekstem, tak naprawdę wołana jest na nim metoda
+                        <code>toString</code></li>
+                </ul>
+            </section>
+            <section>
+                <h2 style="margin-bottom: 0">
+                    <span style="font-size: .9em">Jak to tak? - baza danych (1/2)</span>
+                </h2>
+                <ul>
+                    <li class="fragment"><i>Hibernate</i> pozwala na łączenie się z bazą danych</li>
+                    <li class="fragment">Jest to tzw. ORM - mapowanie obiektowo-relacyjne</li>
+                    <li class="fragment">Plik <i>resources/hibernate.cfg.xml</i> mówi
+                        <ul>
+                            <li class="fragment">Jaką mamy bazę, gdzie i jak się z nią łączyć</li>
+                            <li class="fragment">Co robić przy podłączaniu (u nas: <i>create-drop</i>)</li>
+                            <li class="fragment">Które obiekty łączą się z tabelami</li>
+                        </ul>
+                    </li>
+                    <li class="fragment">Używamy bazy relacyjnej <i>H2</i></li>
+                    <li class="fragment">Jest ona trzymana w pliku <i>~/task-list</i>, ("~" to folder użytkownika systemu
+                        operacyjnego)
+                    </li>
+                    <li class="fragment">Operacje odczytu/zapisu do bazy danych, dzieją się w tzw. sesjach (sesja = trwa
+                        połączenie z bazą)</li>
+                </ul>
+            </section>
+            <section>
+                <h2 style="margin-bottom: 0">
+                    <span style="font-size: .9em">Jak to tak? - baza danych (2/2)</span>
+                </h2>
+                <ul style="font-size: .9em">
+                    <li class="fragment">Klasa <code>Welcome</code> z pakietu <code>model</code>, reprezentuje tabelę "greetings"
+                        z bazy danych
+                        <ul>
+                            <li class="fragment">Czy widzisz to powiązanie?</li>
+                        </ul>
+                    </li>
+                    <li class="fragment">Każde pole z tej klasy jest osobną kolumną w bazie danych</li>
+                    <li class="fragment">Każdy wpis w tabeli musi mieć swój unikalny identyfikator
+                        <ul>
+                            <li class="fragment">Które pole jest identyfikatorem? <span class="fragment">Dlaczego?</span></li>
+                        </ul>
+                    </li>
+                    <li class="fragment">W <code>WelcomeService</code> wyciągamy po id wiersz z tabeli związanej z klasą
+                        <code>Welcome</code>:
+                        <pre style="margin-top: 0"><code class="java" data-trim>
+                            HibernateUtil.getSessionFactory()
+                              .openSession().get(Welcome.class, id);
+                        </code></pre>
+                    </li>
+                    <li class="fragment">Start Tomcata odpala <code>DbInit</code>: <code>contextInitialized</code>
+                        <ul>
+                            <li class="fragment">Ta metoda zapisuje 2 obiekty do bazy</li>
+                            <li class="fragment">Inaczej byłoby pusto (skutek <i>create-drop</i>)</li>
+                        </ul>
+                    </li>
+                </ul>
+            </section>
+            <section>
+                <h2 style="margin-bottom: 0">
+                    <span style="font-size: .9em">Jak to tak - skąd narzędzia?</span>
+                </h2>
+                <ul style="font-size: .9em">
+                    <li class="fragment">Zainstalowaliśmy Javę i IntelliJ, a tu Tomcat, Hibernate i inne</li>
+                    <li class="fragment">Charakterystyczny plik <i>pom.xml</i> oznacza, że używamy jeszcze jednego narzędzia
+                        - Maven!
+                        <ul>
+                            <li class="fragment">Przy okazji, POM = Project Object Model</li>
+                        </ul>
+                    </li>
+                    <li class="fragment">Maven pozwala zautomatyzować dociąganie zależności</li>
+                    <li class="fragment">Są one pobierane z repozytorium o nazwie <i>Maven Central</i>
+                        <ul>
+                            <li class="fragment">Jest tam wszystko, czego potrzebuje Java</li>
+                        </ul>
+                    </li>
+                    <li class="fragment">Maven pomaga też w budowaniu aplikacji</li>
+                    <li class="fragment">A skąd Maven? To już IntelliJ + ściągnięte pliki</li>
+                </ul>
+            </section>
+            <section>
+                <h2>
+                    <span>Podsumowanie</span>
+                </h2>
+                <ol>
+                    <li class="fragment">Tomcat serwuje naszą aplikację na <i>localhost:8080</i></li>
+                    <li class="fragment">Przy starcie Tomcata następuje usunięcie danych z bazy H2 i wpisanie 2 przykładowych
+                        wartości</li>
+                    <li class="fragment">Zapytanie np. o <i>localhost:8080/api/test</i> wywołuje odpowiednią metodę z <code>WelcomeServlet</code></li>
+                    <li class="fragment"><code>WelcomeServlet</code> woła <code>WelcomeService</code>, który wyciąga odpowiednie
+                        dane z bazy przez <i>Hibernate'a</i></li>
+                    <li class="fragment">Powstaje <code>String</code>, który trafia do przeglądarki przez <code>HttpServletResponse</code></li>
+                </ol>
+            </section>
+            <section>
+                <h2>
+                    <span>Szybki quiz (7 pytań)</span>
+                </h2>
+                <ol>
+                    <li class="fragment">ORM oznacza? <span class="fragment" style="color: limegreen">Mapowanie obiektowo-relacyjne</span></li>
+                    <li class="fragment">Jakiego serwera używamy? <span class="fragment" style="color: limegreen">Tomcat</span></li>
+                    <li class="fragment">Jaki jest adres naszej aplikacji? <span class="fragment" style="color: limegreen"><i>localhost:8080</i></span></li>
+                    <li class="fragment">Jakiej metody HTTP użyliśmy? <span class="fragment" style="color: limegreen">GET</span></li>
+                    <li class="fragment">Czym w tabeli będą pola mapowanej przez Hibernate'a klasy? <span class="fragment"
+                            style="color: limegreen">Kolumnami</span></li>
+                    <li class="fragment">Gdzie są zdefiniowane zależności, z których korzystamy? <span class="fragment" style="color: limegreen"><i>dependencies</i>,
+                            <i>pom.xml</i></span></li>
+                    <li class="fragment">Gdzie definiować logikę biznesową aplikacji? <span class="fragment" style="color: limegreen">W
+                            klasach "Service"</span></li>
+                </ol>
+            </section>
+            <section data-background-image="img/bg-hd.jpg" data-background-transition="zoom" data-background-size="75%">
+                <h2>
+                    <span style="color: lightgreen">Dziękuję i do zobaczenia :)</span>
+                </h2>
+                <ul id="about-me-end" style="margin-bottom: 4em">
+                    <li>
+                        <a href="https://www.linkedin.com/in/mateusz-chrzonstowski/">
+                            <i class="fab fa-linkedin" style="color: #0077B5; background-color: #FFF; line-height: .75em"></i>
+                            /mateusz-chrzonstowski
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://twitter.com/_mat3e_">
+                            <i class="fab fa-twitter-square" style="background-color: #1DA1F2; color: #FFF; line-height: .75em"></i>
+                            /_mat3e_
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.reddit.com/user/_mat3e_">
+                            <i class="fab fa-reddit-square" style="background-color: #FF4500; color: #FFF; line-height: .75em"></i>
+                            /_mat3e_
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/mat3e/">
+                            <i class="fab fa-github-square" style="color: #24292E; background-color: #FFF; line-height: .75em"></i>
+                            /mat3e
+                        </a>
+                    </li>
+                </ul>
+            </section>
+        </div>
+    </div>
+    <script src="js/head.min.js"></script>
+    <script src="js/reveal.js"></script>
+    <script>
+        (function () {
+            Reveal.initialize({
+                history: true,
+                // - null: Media will only autoplay if data-autoplay is present
+                autoPlayMedia: null,
+                transition: 'slide', // none/fade/slide/convex/concave/zoom
+                transitionSpeed: 'default', // default/fast/slow
+                backgroundTransition: 'slide', // none/fade/slide/convex/concave/zoom
+                dependencies: [
+                    { src: 'https://unpkg.com/reveal.js/lib/js/classList.js', condition: function () { return !document.body.classList; } },
+
+                    { src: 'https://unpkg.com/reveal.js/plugin/markdown/marked.js', condition: function () { return !!document.querySelector('[data-markdown]'); } },
+                    { src: 'https://unpkg.com/reveal.js/plugin/markdown/markdown.js', condition: function () { return !!document.querySelector('[data-markdown]'); } },
+
+                    // Syntax highlight for <code> elements
+                    { src: 'https://unpkg.com/reveal.js/plugin/highlight/highlight.js', callback: function () { hljs.initHighlightingOnLoad(); } },
+
+                    // Zoom in and out with Alt+click
+                    { src: 'https://unpkg.com/reveal.js/plugin/zoom-js/zoom.js' },
+
+                    { src: 'notes/notes.js' },
+
+                    { src: 'https://unpkg.com/reveal.js/plugin/math/math.js' }
+                ]
+            });
+
+            document.querySelectorAll('.reveal .slides > section:not([data-background-image])').forEach(s => {
+                s.setAttribute('data-background-image', 'img/logo.png');
+                s.setAttribute('data-background-size', '240px');
+                s.setAttribute('data-background-position', '.5em .5em');
+            });
+        })();
+    </script>
+</body>
+
+</html>
