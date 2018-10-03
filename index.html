@@ -1,0 +1,760 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="description" content="Presentation">
+    <meta name="keywords" content="presentation">
+    <meta name="author" content="mat3e">
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+    <meta content="utf-8" http-equiv="encoding">
+
+    <link rel="stylesheet" href="css/reveal.css">
+    <link rel="stylesheet" href="https://unpkg.com/reveal.js/css/theme/white.css">
+    <link rel="stylesheet" href="css/idea.css">
+    <link rel="stylesheet" href="css/fontawesome.css">
+    <style>
+        #header {
+            color: #10a8ae;
+            text-align: left;
+            line-height: .85;
+
+            padding-left: .1em;
+
+            border-left: solid .1em #10a8ae;
+        }
+
+        #header-logo {
+            width: 290px;
+            height: 105px;
+            background: url('img/logo.png') no-repeat;
+
+            top: -4em;
+            right: 0;
+            position: absolute;
+        }
+
+        #about-me,
+        #about-me-end {
+            list-style-type: none;
+            margin-left: 12.5%;
+            float: left;
+        }
+
+        #about-me a,
+        #about-me-end a {
+            color: white;
+        }
+
+        #about-me a:hover,
+        #about-me-end a:hover {
+            color: #dd5566;
+        }
+
+        .slides section img.pure-img {
+            border: none;
+            box-shadow: none;
+        }
+
+        code[contenteditable="true"] {
+            border: 0;
+            outline: 0;
+        }
+
+        .slides section pre {
+            margin-bottom: 0;
+        }
+
+        .slides section pre+button {
+            cursor: pointer;
+
+            font-size: .65em;
+            font-weight: 100;
+            -webkit-font-smoothing: antialiased;
+
+            color: white;
+            background: rgb(175, 30, 35);
+
+            padding: 0 3px;
+            border: transparent;
+            border-radius: 4px;
+        }
+
+        .slides section .pure-img {
+            border: none;
+            margin: 0;
+            box-shadow: none;
+            background-color: rgba(255, 255, 255, 0);
+        }
+
+        .slides section a .stripped-img {
+            border: none;
+            margin: 0;
+            box-shadow: none;
+            background-color: rgba(255, 255, 255, 0);
+        }
+
+        .slides section a .stripped-img:hover {
+            border: none;
+            margin: 0;
+            box-shadow: none;
+            background-color: rgba(255, 255, 255, 0);
+        }
+
+        .slides section .comment {
+            margin-top: -20px;
+            margin-bottom: 20px;
+            color: gray;
+        }
+    </style>
+    <script>
+        var link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = window.location.search.match(/print-pdf/gi) ? 'css/print/pdf.css' : 'css/print/paper.css';
+        document.getElementsByTagName('head')[0].appendChild(link);
+    </script>
+</head>
+
+<body>
+    <div class="reveal">
+        <div class="slides">
+            <section data-background-image>
+                <section data-background-color="#fff">
+                    <h1 id="header">Warsztat z Javy<br><span style="color: black; font-size: .75em">Budujemy aplikację!</span></h1>
+                    <div id="header-logo"></div>
+                </section>
+                <section data-background-image="img/bg-hd.jpg" data-background-transition="zoom" data-background-size="75%">
+                    <ul id="about-me">
+                        <li>
+                            <a href="https://www.linkedin.com/in/mateusz-chrzonstowski/">
+                                <i class="fab fa-linkedin" style="color: #0077B5; background-color: #FFF; line-height: .75em"></i>
+                                /mateusz-chrzonstowski
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://twitter.com/_mat3e_">
+                                <i class="fab fa-twitter-square" style="background-color: #1DA1F2; color: #FFF; line-height: .75em"></i>
+                                /_mat3e_
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.reddit.com/user/_mat3e_">
+                                <i class="fab fa-reddit-square" style="background-color: #FF4500; color: #FFF; line-height: .75em"></i>
+                                /_mat3e_
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://github.com/mat3e/">
+                                <i class="fab fa-github-square" style="color: #24292E; background-color: #FFF; line-height: .75em"></i>
+                                /mat3e
+                            </a>
+                        </li>
+                    </ul>
+                </section>
+            </section>
+            <section>
+                <section>
+                    <h2 style="margin-bottom: 0">
+                        <span>Typowy dzień programisty</span>
+                    </h2>
+                    <div>
+                        <img class="pure-img fragment" src="img/movie-coding.gif">
+                        <img class="pure-img fragment" src="img/cat-hacker.gif">
+                        <img class="pure-img fragment" style="width: 55%" src="img/movie-coding2.gif">
+                    </div>
+                </section>
+                <section>
+                    <h2 style="margin-bottom: 0">
+                        <span>Typowy dzień programisty</span>
+                    </h2>
+                    <div>
+                        <img class="pure-img fragment" style="width: 35%" src="img/real-coding.gif">
+                        <img class="pure-img fragment" src="img/real-coding2.gif">
+                        <img class="pure-img fragment" style="width: 30%" src="img/soccer.gif">
+                        <img class="pure-img fragment" style="width: 30%" src="img/pizza.gif">
+                        <img class="pure-img fragment" style="width: 30%" src="img/coffee.gif">
+                    </div>
+                </section>
+                <section data-background-image="img/perception.jpg" data-background-size="contain">
+                </section>
+            </section>
+            <section>
+                <section>
+                    <h2 style="margin-bottom: 0">
+                        <span>Aplikacja</span>
+                    </h2>
+                    <ul>
+                        <li class="fragment">Uruchomienie
+                            <ul>
+                                <li class="fragment">W IDE (IntelliJ)</li>
+                                <li class="fragment">Po zbudowaniu pliku JAR</li>
+                            </ul>
+                        </li>
+                        <li class="fragment"><i>localhost:8080/api/test</i></li>
+                        <li class="fragment"><i>?name=Mistrz</i></li>
+                        <li class="fragment"><i>localhost:8080/api/test?welcome=2</i></li>
+                        <li class="fragment"><i>http://localhost:8080/api/test?welcome=2&name=Mistrz</i></li>
+                    </ul>
+                    <aside class="notes">
+                        Omawiać kod tutaj - otworzyć w IntelliJ
+                    </aside>
+                </section>
+            </section>
+            <section>
+                <section>
+                    <h1>
+                        <span>Ale jak to działa?</span>
+                    </h1>
+                    <aside class="notes">Rysować kolejne warstwy i HTTP</aside>
+                </section>
+                <section>
+                    <h2 style="margin-bottom: 0">
+                        <span>serwer</span>
+                    </h2>
+                    <ul>
+                        <li class="fragment">W klasie <code>TaskList4000</code> dzieje się trochę magii, ale widać tam
+                            słowo
+                            "Tomcat"
+                        <li class="fragment">Tomcat jest serwerem, który umie interpretować kod Javy</li>
+                        <li class="fragment">Magia sprawia, że Tomcat jest częścią budowanej przez nas aplikacji</li>
+                        <li class="fragment">Magia mówi, na jakie klasy i foldery Tomcat powinien patrzeć</li>
+                        <li class="fragment">Tomcat jest odpalony lokalnie, stąd adres "localhost:8080"</li>
+                        </li>
+                    </ul>
+                </section>
+                <section>
+                    <h2 style="margin-bottom: 0;">
+                        <span><code>api/test</code></span>
+                    </h2>
+                    <ul style="font-size: .9em">
+                        <li class="fragment">Gdy wpisujemy adres, np. "localhost:8080", przeglądarka dodaje od siebie
+                            "http://"</li>
+                        <li class="fragment">W internetach HTTP jest wszechobecne!</li>
+                        <li class="fragment">Najpopularniejszą metodą protokołu HTTP jest GET</li>
+                        <li class="fragment">Przeglądarka wysłała żądanie (request) HTTP GET pod adres, np. <i>localhost:8080/api/test</i></li>
+                        <li class="fragment">Jedną z klas w Tomcat'cie jest <code>WelcomeServlet</code> (który
+                            rozszerza <code>HttpServlet</code>)</li>
+                        <li class="fragment"><code>WelcomeServlet</code> jest powiązany z adresem "/api/test"</li>
+                        <li class="fragment"><code>WelcomeServlet</code> ma metodę <code>doGet</code>, obsługującą
+                            żądanie
+                            HTTP
+                            GET i odpowiedź na to żądanie (response)</li>
+                    </ul>
+                    <aside class="notes">Tu nie tylko request-response ale i REST</aside>
+                </section>
+                <section>
+                    <h2 style="margin-bottom: 0">
+                        <span><code>doGet</code> (1/2)</span>
+                    </h2>
+                    <ul>
+                        <li class="fragment"><code>req.getParameter("name")</code> to instrukcja, pobierająca z żądania
+                            parametr
+                            "name"
+                            <ul>
+                                <li class="fragment">W przypadku <i>http://localhost:8080/api/test?name=Mistrz</i> jest
+                                    to
+                                    "Mistrz"</li>
+                            </ul>
+                        </li>
+                        <li class="fragment">Gdy nie ma parametru name, jego wartość to <code>null</code></li>
+                        <li class="fragment">Można pisać:
+                            <pre style="margin-top:0"><code class="java" data-trim>
+                            String name = req.getParameter("name");
+                            if(name == null) {
+                                name = "world";
+                            }
+                        </code></pre>
+                        </li>
+                        <li class="fragment">Ale można też:
+                            <pre style="margin-top:0"><code class="java" data-trim>
+                            var name = Optional.ofNullable(req.getParameter("name"))
+                              .orElse("world");
+                        </code></pre>
+                        </li>
+                    </ul>
+                </section>
+                <section>
+                    <h2 style="margin-bottom: 0">
+                        <span><code>doGet</code> (2/2)</span>
+                    </h2>
+                    <ul>
+                        <li class="fragment">Parametry są przesyłane jako <code>String</code> (tekst)</li>
+                        <li class="fragment"><code>Integer.valueOf(text)</code> pozwala zamienić <code>text</code> na
+                            liczbę
+                            całkowitą
+                        </li>
+                        <li class="fragment">Klasa <code>WelcomeServlet</code> ma prywatne pole typu <code>WelcomeService</code></li>
+                        <li class="fragment"><code>WelcomeService</code> zwraca odpowiedni tekst, dla zadanych <code>name</code>
+                            oraz
+                            <code>id</code></li>
+                        <li class="fragment">Umieszczenie tekstu w odpowiedzi (jeden ze sposobów):
+                            <pre style="margin-top:0"><code class="java" data-trim>resp.getWriter().write(fullText);</code></pre>
+                        </li>
+                    </ul>
+                </section>
+                <section>
+                    <h2 style="margin-bottom: 0">
+                        <span><code>WelcomeService</code></span>
+                    </h2>
+                    <ul style="font-size: .9em">
+                        <li class="fragment">Serwisy to miejsca w kodzie, gdzie trafia logika biznesowa ("mięcho")
+                            aplikacji</li>
+                        <li class="fragment"><code>WelcomeService</code> ma metodę, która "wie" jak dla podanej nazwy
+                            oraz
+                            id
+                            powitania, stworzyć tekst, witający użytkownika z daną nazwą</li>
+                        <li class="fragment">W pierwszym kroku metody następuje pobranie powitania z bazy danych</li>
+                        <li class="fragment">Do komunikacji z bazą, jest użyte narzędzie <i>Hibernate</i></li>
+                        <li class="fragment">Pobrane powitanie jest "sklejane" z resztą wiadomości</li>
+                        <li class="fragment">Gdy obiekt powitania "skleja się" z tekstem, tak naprawdę wołana jest na
+                            nim
+                            metoda
+                            <code>toString</code></li>
+                    </ul>
+                </section>
+                <section>
+                    <h2 style="margin-bottom: 0">
+                        <span>baza danych (1/2)</span>
+                    </h2>
+                    <ul>
+                        <li class="fragment"><i>Hibernate</i> pozwala na łączenie się z bazą danych</li>
+                        <li class="fragment">Jest to tzw. ORM - mapowanie obiektowo-relacyjne</li>
+                        <li class="fragment">Plik <i>resources/hibernate.cfg.xml</i> mówi
+                            <ul>
+                                <li class="fragment">Jaką mamy bazę, gdzie i jak się z nią łączyć</li>
+                                <li class="fragment">Co robić przy podłączaniu (u nas: <i>create-drop</i>)</li>
+                                <li class="fragment">Które obiekty łączą się z tabelami</li>
+                            </ul>
+                        </li>
+                        <li class="fragment">Używamy bazy relacyjnej <i>H2</i></li>
+                        <li class="fragment">Jest ona trzymana w pliku <i>~/task-list</i>, ("~" to folder użytkownika
+                            systemu
+                            operacyjnego)
+                        </li>
+                        <li class="fragment">Operacje odczytu/zapisu do bazy danych, dzieją się w tzw. sesjach (sesja =
+                            trwa
+                            połączenie z bazą)</li>
+                    </ul>
+                </section>
+                <section>
+                    <h2 style="margin-bottom: 0">
+                        <span>baza danych (2/2)</span>
+                    </h2>
+                    <ul style="font-size: .9em">
+                        <li class="fragment">Klasa <code>Welcome</code> z pakietu <code>model</code>, reprezentuje
+                            tabelę
+                            "greetings"
+                            z bazy danych
+                        </li>
+                        <li class="fragment">Każde pole z tej klasy jest osobną kolumną w bazie danych</li>
+                        <li class="fragment">Każdy wpis w tabeli musi mieć swój unikalny identyfikator</li>
+                        <li class="fragment">W <code>WelcomeService</code> wyciągamy po id wiersz z tabeli związanej z
+                            klasą
+                            <code>Welcome</code>:
+                            <pre style="margin-top: 0"><code class="java" data-trim>
+                            HibernateUtil.getSessionFactory()
+                              .openSession().get(Welcome.class, id);
+                        </code></pre>
+                        </li>
+                        <li class="fragment">Start Tomcata odpala <code>DbInit</code>: <code>contextInitialized</code>
+                            <ul>
+                                <li class="fragment">Ta metoda zapisuje 2 obiekty do bazy</li>
+                                <li class="fragment">Inaczej byłoby pusto (skutek <i>create-drop</i>)</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </section>
+                <section>
+                    <h2 style="margin-bottom: 0">
+                        <span>skąd narzędzia?</span>
+                    </h2>
+                    <ul style="font-size: .9em">
+                        <li class="fragment">Zainstalowaliśmy Javę i IntelliJ, a tu Tomcat, Hibernate i inne</li>
+                        <li class="fragment">Charakterystyczny plik <i>pom.xml</i> oznacza, że używamy jeszcze jednego
+                            narzędzia
+                            - Maven!
+                            <ul>
+                                <li class="fragment">Przy okazji, POM = Project Object Model</li>
+                            </ul>
+                        </li>
+                        <li class="fragment">Maven pozwala zautomatyzować dociąganie zależności</li>
+                        <li class="fragment">Są one pobierane z repozytorium o nazwie <i>Maven Central</i>
+                            <ul>
+                                <li class="fragment">Jest tam wszystko, czego potrzebuje Java</li>
+                            </ul>
+                        </li>
+                        <li class="fragment">Maven pomaga też w budowaniu aplikacji</li>
+                        <li class="fragment">A skąd Maven? To już IntelliJ + ściągnięte pliki</li>
+                    </ul>
+                </section>
+                <section>
+                    <a href="https://kahoot.it/"><img src="img/kahoot_logo.svg" class="pure-img"></a>
+                </section>
+                <section>
+                    <h2>
+                        <span>Podsumowanie działania</span>
+                    </h2>
+                    <ol>
+                        <li class="fragment">Tomcat serwuje naszą aplikację na <i>localhost:8080</i></li>
+                        <li class="fragment">Przy starcie Tomcata następuje usunięcie danych z bazy H2 i wpisanie 2
+                            przykładowych
+                            wartości</li>
+                        <li class="fragment">Zapytanie np. o <i>localhost:8080/api/test</i> wywołuje odpowiednią metodę
+                            z
+                            <code>WelcomeServlet</code></li>
+                        <li class="fragment"><code>WelcomeServlet</code> woła <code>WelcomeService</code>, który
+                            wyciąga
+                            odpowiednie
+                            dane z bazy przez <i>Hibernate'a</i></li>
+                        <li class="fragment">Powstaje <code>String</code>, który trafia do przeglądarki przez <code>HttpServletResponse</code></li>
+                    </ol>
+                </section>
+            </section>
+            <section>
+                <section>
+                    <h2 style="margin-bottom: 0">
+                        <span>Aplikacja - frontend</span>
+                    </h2>
+                    <ul>
+                        <li class="fragment"><i>localhost:8080</i></li>
+                        <li class="fragment">Zawartość z folderu <i>src/main/webapp/</i></li>
+                        <li class="fragment">A co się dzieje w konsoli przeglądarki?</li>
+                        <li class="fragment"><i>localhost:8080</i> może normalnie odpytywać <i>localhost:8080/api</i></li>
+                    </ul>
+                    <aside class="notes">
+                        A że jest index.html, to jest to dostępne "o tak o"
+                    </aside>
+                </section>
+            </section>
+            <section>
+                <section>
+                    <h2>
+                        <span>Nasza sytuacja</span>
+                    </h2>
+                    <ul>
+                        <li class="fragment">Są pewne konwencje
+                            <ul>
+                                <li class="fragment">Architektura warstwowa</li>
+                                <li class="fragment">Relacyjna baza danych, ORM</li>
+                            </ul>
+                        </li>
+                        <li class="fragment">Jest już front-end, wymagający konkretnych pól i metod HTTP</li>
+                        <li class="fragment">Nasze zadanie? <span class="fragment">Dostosować się i rozwinąć apkę!</span></li>
+                    </ul>
+                </section>
+            </section>
+            <section>
+                <section>
+                    <h2>
+                        <span>Zadanie 1</span>
+                    </h2>
+                    <h2 class="fragment">pobranie istniejacych TODO</h2>
+                </section>
+                <section>
+                    <h2>
+                        <span>Nowy model</span>
+                    </h2>
+                    <ol>
+                        <li class="fragment">Klasa <code>Todo</code>
+                            <ul>
+                                <li class="fragment">Jakie pola?</li>
+                            </ul>
+                        </li>
+                        <li class="fragment">Nowa klasa dodana do Hibernate'a</li>
+                        <li class="fragment">Przykładowe zadania <code>Todo</code></li>
+                    </ol>
+                    <aside class="notes">
+                        <pre><code class="java" data-trim>
+                            @Entity
+                            @Table(name = "todos")
+                            public class Todo {
+                                @Id
+                                @GeneratedValue(strategy = GenerationType.IDENTITY)
+                                private int id;
+                                private String text;
+                                private boolean done;
+
+                                public Todo() {
+                                    // JPA
+                                }
+
+                                public Todo(String text) {
+                                    this.text = text;
+                                    this.done = false;
+                                }
+                        </code></pre>
+                    </aside>
+                </section>
+                <section>
+                    <h2>
+                        <span>Nowy serwis</span>
+                    </h2>
+                    <p class="fragment">
+                        Pobranie wszystkich <code>Todo</code>
+                    </p>
+                    <aside class="notes">
+                        <pre><code class="java" data-trim>
+                            public class TodoService {
+                                public List&lt;Todo> getAllTodos() {
+                                    return HibernateUtil.getSessionFactory().openSession().createCriteria(Todo.class).list();
+                                }
+                        </code></pre>
+                    </aside>
+                </section>
+                <section>
+                    <h2>
+                        <span>Nowy <code>HttpServlet</code></span>
+                    </h2>
+                    <ol>
+                        <li class="fragment">
+                            Metoda <code>doGet</code>
+                        </li>
+                        <li class="fragment">Jak umieścić wszystkie <code>Todo</code> wewnątrz <code>response</code>'a?</li>
+                        <li class="fragment">Zamiana obiektu w JSON!
+                            <ul>
+                                <li class="fragment"><code>ObjectMapper</code> (pakiet do ściągnięcia: <code>com.fasterxml.jackson.core.jackson-databind</code>)</li>
+                            </ul>
+                        </li>
+                    </ol>
+                    <aside class="notes">
+                        <pre><code class="java" data-trim>
+                            @WebServlet(name = "TodoServlet", urlPatterns = {"/api/todos/*"})
+                            public class TodoServlet extends HttpServlet {
+                                private final ObjectMapper objectMapper = new ObjectMapper();
+                                private final TodoService service = new TodoService();
+
+                                @Override
+                                protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException {
+                                    resp.setContentType("application/json;charset=UTF-8");
+                                    objectMapper.writeValue(resp.getOutputStream(), service.getAllTodos());
+                                }
+                        </code></pre>
+                        <pre><code class="xml" data-trim>
+                            &lt;!-- obsługa JSON-ów -->
+                            &lt;dependency>
+                                &lt;groupId>com.fasterxml.jackson.core&lt;/groupId>
+                                &lt;artifactId>jackson-databind&lt;/artifactId>
+                                &lt;version>2.9.5&lt;/version>
+                            &lt;/dependency>
+                        </code></pre>
+                    </aside>
+                </section>
+                <section>
+                    <h2>
+                        <span>Sprawdźmy to!</span>
+                    </h2>
+                    <p class="fragment">
+                        <a href="https://kahoot.it/"><img src="img/kahoot_logo.svg" class="pure-img"></a>
+                    </p>
+                </section>
+            </section>
+            <section>
+                <section>
+                    <h2>
+                        <span>Zadanie 2</span>
+                    </h2>
+                    <h2 class="fragment">Tworzenie zadań <code>Todo</code></h2>
+                </section>
+                <section>
+                    <h2>
+                        <span><code>HttpServlet</code> - tworzenie nowego <code>Todo</code></span>
+                    </h2>
+                    <ol>
+                        <li class="fragment">Dostajemy tekst nowego <code>Todo</code>
+                            <ul>
+                                <li class="fragment">ID powinien zostać nadany przez bazę danych</li>
+                                <li class="fragment">Stworzone <code>Todo</code> nie może być od razu zrobione</li>
+                            </ul>
+                        </li>
+                        <li class="fragment">Serwis powinien dodawać nowe <code>Todo</code> i zwracać stworzony obiekt,
+                            już z ID</li>
+                        <li class="fragment">Zwracamy stworzony obiekt (jako JSON)</li>
+                    </ol>
+                    <aside class="notes">
+                        <pre><code class="java" data-trim>
+                            @Override
+                            protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws IOException {
+                                var text = req.getReader().lines().collect(Collectors.joining(System.lineSeparator()));
+                                resp.setContentType("application/json;charset=UTF-8");
+                                objectMapper.writeValue(resp.getOutputStream(), service.addTodo(text));
+                            }
+                        </code></pre>
+                    </aside>
+                </section>
+                <section>
+                    <h2>
+                        <span>Serwis i dalej</span>
+                    </h2>
+                    <ul>
+                        <li class="fragment">Wykonanie zapisu w obrębie transakcji</li>
+                        <li class="fragment">Zmiana <code>create-drop</code> na <code>validate</code></li>
+                        <li class="fragment">Rezygnacja z początkowych danych w bazie</li>
+                    </ul>
+                    <aside class="notes">
+                        <pre><code class="java" data-trim>
+                            public Todo addTodo(String todoText) {
+                                var todo = new Todo(todoText);
+                                var session = HibernateUtil.getSessionFactory().openSession();
+                                var transaction = session.beginTransaction();
+                                session.persist(todo);
+                                transaction.commit();
+                                session.close();
+                                return todo;
+                            }
+                        </code></pre>
+                    </aside>
+                </section>
+            </section>
+            <section>
+                <section>
+                    <h2>
+                        <span>Zadanie 3</span>
+                    </h2>
+                    <h2 class="fragment">Edycja zadań <code>Todo</code></h2>
+                </section>
+                <section>
+                    <h2>
+                        <span><code>HttpServlet</code> - zmiana istniejącego <code>Todo</code></span>
+                    </h2>
+                    <ol>
+                        <li class="fragment">Adres będzie zawierał ID zadania, które powinniśmy zmienić</li>
+                        <li class="fragment">Np. <i>localhost:8080/api/todos/2</i>, gdy zostało kliknięte <code>Todo</code>
+                            o ID=2</li>
+                    </ol>
+                    <aside class="notes">
+                        <pre><code class="java" data-trim>
+                            @Override
+                            protected void doPut(HttpServletRequest req, HttpServletResponse resp) throws IOException {
+                                var pathInfo = req.getPathInfo(); // np. "/123" dla "localhost:8080/api/todos/123"
+                                int id = Integer.valueOf(pathInfo.substring(1));
+                                resp.setContentType("application/json;charset=UTF-8");
+                                objectMapper.writeValue(resp.getOutputStream(), service.toggleTodo(id));
+                            }
+                        </code></pre>
+                    </aside>
+                </section>
+                <section>
+                    <h2>
+                        <span>Serwis</span>
+                    </h2>
+                    <p class="fragment">Podmianka statusu w obrębie transakcji</p>
+                    <aside class="notes">
+                        <pre><code class="java" data-trim>
+                            public Todo toggleTodo(int id) {
+                                var session = HibernateUtil.getSessionFactory().openSession();
+                                var transaction = session.beginTransaction();
+                                var todo = (Todo) session.get(Todo.class, id);
+                                todo.setDone(!todo.isDone());
+                                transaction.commit();
+                                session.close();
+                                return todo;
+                            }
+                        </code></pre>
+                    </aside>
+                </section>
+            </section>
+            <section>
+                <section>
+                    <h2>
+                        <span>Sprawdźmy to!</span>
+                    </h2>
+                    <p class="fragment">
+                        <a href="https://kahoot.it/"><img src="img/kahoot_logo.svg" class="pure-img"></a>
+                    </p>
+                </section>
+            </section>
+            <section>
+                <section>
+                    <h2>
+                        <span>A co dalej?</span>
+                    </h2>
+                    <ul>
+                        <li class="fragment">Np. użytkownicy i zadania per użytkownik</li>
+                        <li class="fragment">A co więcej programistycznie?
+                            <ul>
+                                <li class="fragment">Szczegóły Mavena</li>
+                                <li class="fragment">Frameworki ułatwiające tworzenie aplikacji</li>
+                                <li class="fragment">Inne serwery, inne bazy danych (NoSQL)</li>
+                                <li class="fragment">Inne rodzaje architektury (nie tylko warstwowa)</li>
+                                <li class="fragment">Wzorce projektowe</li>
+                                <li class="fragment">Data Transfer Object (DTO)</li>
+                                <li class="fragment">Data Access Object (DAO), repozytoria</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </section>
+            </section>
+            <section>
+                <section data-background-image="img/bg-hd.jpg" data-background-transition="zoom" data-background-size="75%">
+                    <h2>
+                        <span style="color: lightgreen">Dziękuję za uwagę</span>
+                    </h2>
+                    <ul id="about-me-end">
+                        <li>
+                            <a href="https://www.linkedin.com/in/mateusz-chrzonstowski/">
+                                <i class="fab fa-linkedin" style="color: #0077B5; background-color: #FFF; line-height: .75em"></i>
+                                /mateusz-chrzonstowski
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://twitter.com/_mat3e_">
+                                <i class="fab fa-twitter-square" style="background-color: #1DA1F2; color: #FFF; line-height: .75em"></i>
+                                /_mat3e_
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.reddit.com/user/_mat3e_">
+                                <i class="fab fa-reddit-square" style="background-color: #FF4500; color: #FFF; line-height: .75em"></i>
+                                /_mat3e_
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://github.com/mat3e/">
+                                <i class="fab fa-github-square" style="color: #24292E; background-color: #FFF; line-height: .75em"></i>
+                                /mat3e
+                            </a>
+                        </li>
+                    </ul>
+                </section>
+            </section>
+        </div>
+    </div>
+    <script src="js/head.min.js"></script>
+    <script src="js/reveal.js"></script>
+    <script>
+        (function () {
+            Reveal.initialize({
+                history: true,
+                // - null: Media will only autoplay if data-autoplay is present
+                autoPlayMedia: null,
+                transition: 'slide', // none/fade/slide/convex/concave/zoom
+                transitionSpeed: 'default', // default/fast/slow
+                backgroundTransition: 'slide', // none/fade/slide/convex/concave/zoom
+                dependencies: [
+                    { src: 'https://unpkg.com/reveal.js/lib/js/classList.js', condition: function () { return !document.body.classList; } },
+
+                    { src: 'https://unpkg.com/reveal.js/plugin/markdown/marked.js', condition: function () { return !!document.querySelector('[data-markdown]'); } },
+                    { src: 'https://unpkg.com/reveal.js/plugin/markdown/markdown.js', condition: function () { return !!document.querySelector('[data-markdown]'); } },
+
+                    // Syntax highlight for <code> elements
+                    { src: 'https://unpkg.com/reveal.js/plugin/highlight/highlight.js', callback: function () { hljs.initHighlightingOnLoad(); } },
+
+                    // Zoom in and out with Alt+click
+                    { src: 'https://unpkg.com/reveal.js/plugin/zoom-js/zoom.js' },
+
+                    { src: 'notes/notes.js' },
+
+                    { src: 'https://unpkg.com/reveal.js/plugin/math/math.js' }
+                ]
+            });
+
+            document.querySelectorAll('.reveal .slides > section section:not([data-background-image])').forEach(s => {
+                s.setAttribute('data-background-image', 'img/logo.png');
+                s.setAttribute('data-background-size', '240px');
+                s.setAttribute('data-background-position', '.5em .5em');
+            });
+        })();
+    </script>
+</body>
+
+</html>
